@@ -46,7 +46,7 @@
     <a href="home.jsp"><img src="your-logo.png" alt="Auberg Logo"></a>
 
     <ul>
-        <li><a href="#accommodation">Accommodation</a></li>
+        <li><a href="accomodations.jsp">Accommodation</a></li>
         <li><a href="#food">Food</a></li>
         <li><a href="#library">Library</a></li>
         <li><a href="#transport">Transport</a></li>
