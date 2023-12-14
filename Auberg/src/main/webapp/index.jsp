@@ -8,7 +8,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Auberg - Hostel Provision</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 

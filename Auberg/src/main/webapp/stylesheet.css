@@ -54,3 +54,21 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Responsive Styles */
+
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for small screens */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5em 0;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
