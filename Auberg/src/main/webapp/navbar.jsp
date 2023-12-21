@@ -43,7 +43,7 @@
 </style>
 
 <nav>
-    <a href="home.jsp"><img src="your-logo.png" alt="Auberg Logo"></a>
+    <a href="index.jsp"><img src="your-logo.png" alt="Auberg Logo"></a>
 
     <ul>
         <li><a href="accomodations.jsp">Accommodation</a></li>
