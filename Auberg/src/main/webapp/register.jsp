@@ -59,6 +59,7 @@
             <button type="submit">Register</button>
         </form>
     </div>
+<script src="registration-validation.js"></script>
 
 </body>
 </html>

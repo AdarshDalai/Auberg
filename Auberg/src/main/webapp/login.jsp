@@ -21,6 +21,7 @@
             <button type="button" class="register-button" onclick="location.href='register.jsp';">Register</button>
         </form>
     </div>
+<script src="registration-validation.js"></script>
 
 </body>
 </html>
