@@ -19,8 +19,7 @@ public class LoginServlet extends HttpServlet {
 
         if (UserManager.authenticate(username, password)) {
             // Store user credentials in the session
-            request.getSession().setAttribute("username", username);
-            request.getSession().setAttribute("password", password);
+            request.getSession().setAttribute("user", new user.User(username, password));
 
             // Redirect to the admin page
             response.sendRedirect(request.getContextPath() + "/admin");
