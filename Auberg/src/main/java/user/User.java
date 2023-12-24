@@ -1,6 +1,9 @@
+//User class
 package user;
 
 public class User {
+
+    private Long userId;
     private String username;
     private String password;
     private String email;
@@ -20,8 +23,8 @@ public class User {
 
     // Additional constructor for user registration
     public User(String username, String password, String email, String address, String phoneNumber,
-                String parentDetails, int age, String gender, String aadharNumber,
-                String collegeName, String collegeAddress) {
+            String parentDetails, int age, String gender, String aadharNumber,
+            String collegeName, String collegeAddress) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -94,4 +97,3 @@ public class User {
         return "admin".equals(role);
     }
 }
-

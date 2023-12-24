@@ -1,3 +1,5 @@
+//AdminPageServlet class
+
 package servlets;
 
 import java.io.IOException;
@@ -30,6 +32,5 @@ public class AdminPageServlet extends HttpServlet {
         Object userObj = request.getSession().getAttribute("user");
 
         // Check if the user is an admin (assuming User class has isAdmin() method)
-        return userObj instanceof User && ((User) userObj).isAdmin();
-    }
+        return userObj instanceof User && ((User) userObj).isAdmin();    }
 }

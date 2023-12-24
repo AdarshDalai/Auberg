@@ -1,3 +1,4 @@
+//RegistrationServlet class
 package servlets;
 
 import java.io.IOException;
@@ -29,7 +30,8 @@ public class RegistrationServlet extends HttpServlet {
         String collegeAddress = request.getParameter("collegeAddress");
 
         // Create a User object
-        User newUser = new User(username, password, email, address, phoneNumber, parentDetails, age, gender, aadharNumber, collegeName, collegeAddress);
+        User newUser = new User(username, password, email, address, phoneNumber, parentDetails, age, gender,
+                aadharNumber, collegeName, collegeAddress);
 
         // Insert user into the database
         if (UserManager.registerUser(newUser)) {

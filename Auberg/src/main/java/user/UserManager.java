@@ -1,3 +1,4 @@
+//UserManager class
 package user;
 
 import java.sql.Connection;
@@ -8,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-    private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
-    private static final String JDBC_USER = "adarsh";
-    private static final String JDBC_PASSWORD = "Adarsh123";
+    private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    private static final String JDBC_USER = "auberg";
+    private static final String JDBC_PASSWORD = "auberg123";
 
     public static boolean authenticate(String username, String password) {
         // Implement your authentication logic here
@@ -29,9 +30,9 @@ public class UserManager {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-                String sql = "INSERT INTO users (username, email, password, address, phone_number, parent_details, age, gender, aadhar_number, college_name, college_address) " +
-                             "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
+                String sql = "INSERT INTO users (username, email, password, address, phone_number, parent_details, age, gender, aadhar_number, college_name, college_address) "
+                        +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                     preparedStatement.setString(1, user.getUsername());
                     preparedStatement.setString(2, user.getEmail());
