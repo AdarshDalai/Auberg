@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import user.User;
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -29,20 +28,18 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (authenticate(username, password)) {
-            // Get user details from the database (you can modify this based on your user structure)
             User authenticatedUser = getUserDetails(username);
 
-            // Create a session and store the authenticated user
             HttpSession session = request.getSession(true);
             session.setAttribute("user", authenticatedUser);
             session.setAttribute("loggedIn", true);
+            System.out.println("User " + username + " logged in. Session ID: " + session.getId());
 
-            // Redirect to the accommodations page or any other page you want to go after successful login
             response.sendRedirect(request.getContextPath() + "/accomodations.jsp");
         } else {
-            // Redirect to the login page with an error message
             response.sendRedirect(request.getContextPath() + "/login.jsp?error=1");
         }
+    
     }
 
     private boolean authenticate(String username, String password) {
@@ -71,9 +68,31 @@ public class LoginServlet extends HttpServlet {
     }
 
     private User getUserDetails(String username) {
-        // Retrieve user details from the database based on the username
-        // You can modify this method based on your user structure
-        // Return a User object with the retrieved details
-        return null;
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE username = ?")) {
+            preparedStatement.setString(1, username);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    User user = new User(
+                            resultSet.getString("USERNAME"),
+                            resultSet.getString("PASSWORD"),  // Consider not retrieving password for security
+                            resultSet.getString("EMAIL"),
+                            resultSet.getString("ADDRESS"),
+                            resultSet.getString("PHONE_NUMBER"),
+                            resultSet.getString("PARENT_DETAILS"),
+                            resultSet.getInt("AGE"),
+                            resultSet.getString("GENDER"),
+                            resultSet.getString("AADHAR_NUMBER"),
+                            resultSet.getString("COLLEGE_NAME"),
+                            resultSet.getString("COLLEGE_ADDRESS")
+                    );
+                    return user;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null; // User not found
     }
 }
