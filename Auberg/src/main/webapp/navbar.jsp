@@ -10,6 +10,7 @@
  
     boolean loggedIn = session != null && session.getAttribute("loggedIn") != null
             && (boolean) session.getAttribute("loggedIn");
+
 %>
 
 <nav>
@@ -18,8 +19,10 @@
     <ul>
         <li><a href="${pageContext.request.contextPath}/accomodations.jsp">Accommodation</a></li>
         <li><a href="#food">Food</a></li>
-        <li><a href="#library">Library</a></li>
-        <li><a href="#transport">Transport</a></li>
+        <li><a href="${pageContext.request.contextPath}/library.jsp">Library</a></li>
+        <li><a href="${pageContext.request.contextPath}/travels.jsp">Transport</a></li>
+        <li><a href="${pageContext.request.contextPath}/profile.jsp">Profile</a></li>
+        
     </ul>
 
     <% if (loggedIn) { %>
@@ -29,4 +32,5 @@
         <!-- User is not logged in -->
         <a href="${pageContext.request.contextPath}/login.jsp" class="login-button">Login</a>
     <% } %>
+    
 </nav>

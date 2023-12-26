@@ -75,6 +75,7 @@ public class LoginServlet extends HttpServlet {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     User user = new User(
+                    		resultSet.getLong("USER_ID"),
                             resultSet.getString("USERNAME"),
                             resultSet.getString("PASSWORD"),  // Consider not retrieving password for security
                             resultSet.getString("EMAIL"),

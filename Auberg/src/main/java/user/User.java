@@ -22,10 +22,26 @@ public class User {
     }
 
     // Additional constructor for user registration
+    public User(long userId, String username, String password, String email, String address, String phoneNumber,
+            String parentDetails, int age, String gender, String aadharNumber,
+            String collegeName, String collegeAddress) {
+        this.userId=userId;
+    	this.username = username;
+        this.password = password;
+        this.email = email;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.parentDetails = parentDetails;
+        this.age = age;
+        this.gender = gender;
+        this.aadharNumber = aadharNumber;
+        this.collegeName = collegeName;
+        this.collegeAddress = collegeAddress;
+    }
     public User(String username, String password, String email, String address, String phoneNumber,
             String parentDetails, int age, String gender, String aadharNumber,
             String collegeName, String collegeAddress) {
-        this.username = username;
+    	this.username = username;
         this.password = password;
         this.email = email;
         this.address = address;
@@ -40,6 +56,10 @@ public class User {
 
     // Getters for all fields
 
+
+    public long getUserId() {
+        return userId;
+    }
     public String getUsername() {
         return username;
     }
