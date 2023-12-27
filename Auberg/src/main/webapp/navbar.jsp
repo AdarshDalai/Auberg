@@ -14,12 +14,10 @@
 %>
 
 <nav>
-    <a href="${pageContext.request.contextPath}/index.jsp"><img src="${pageContext.request.contextPath}/your-logo.png" alt="Auberg Logo"></a>
+    <a href="${pageContext.request.contextPath}/index.jsp"><img src="logo.png" alt="Auberg Logo" height="50px" width="50px"></a>
 
     <ul>
         <li><a href="${pageContext.request.contextPath}/accomodations.jsp">Accommodation</a></li>
-        <li><a href="#food">Food</a></li>
-        <li><a href="${pageContext.request.contextPath}/library.jsp">Library</a></li>
         <li><a href="${pageContext.request.contextPath}/travels.jsp">Transport</a></li>
         <li><a href="${pageContext.request.contextPath}/profile.jsp">Profile</a></li>
         

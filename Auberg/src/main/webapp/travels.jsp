@@ -55,7 +55,7 @@
                             String vehicleType = resultSet.getString("vehicle_type");
                 %>
                             <div>
-                                <img src="images/<%= vehicleType.toLowerCase() %>.jpg" alt="<%= vehicleType %>"><br>
+                                <img src="<%= vehicleType.toLowerCase() %>.jpg" alt="<%= vehicleType %>"><br>
                                 <button class="book-button" name="vehicle" value="<%= vehicleType %>">Book <%= vehicleType %></button>
                             </div>
                 <%

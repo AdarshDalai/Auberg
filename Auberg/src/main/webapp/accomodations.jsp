@@ -58,7 +58,7 @@
                             
                 %>
                             <div>
-                                <img src="images/<%= hostelName.toLowerCase() %>.jpg" alt="<%= hostelName %>"><br>
+                                <img src="<%= hostelName %>.png" alt="<%= hostelName %>"><br>
                                 <button class="book-button" name="accommodation" value="<%= hostelName %>">Book a Bed</button>
                             </div>
                 <%
