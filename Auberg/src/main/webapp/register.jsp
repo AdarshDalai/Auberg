@@ -25,7 +25,7 @@
 
     <body>
 
-        <div class="registration-container">
+        <div class="registration-container" style="height: 1100px; margin-top: 700px; margin-bottom: 100px">
             <h2>User Registration</h2>
             <form action="registration-action" method="post">
                 <!-- Existing fields -->

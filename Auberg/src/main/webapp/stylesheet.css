@@ -60,6 +60,25 @@ footer {
   width: 100%;
 }
 
+.about-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.about-container h3 {
+  color: #007bff;
+}
+
+.about-container p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
 .login-container {
   background-color: #fff;
   padding: 20px;

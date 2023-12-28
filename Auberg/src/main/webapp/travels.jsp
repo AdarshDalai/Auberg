@@ -27,9 +27,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxi Booking</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .travel-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        div {
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .book-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+    
+    </style>
 </head>
 <body>
-
+<div class="travel-container">
     <header>
         <h1>Auberge Travels</h1>
     </header>
@@ -55,7 +120,7 @@
                             String vehicleType = resultSet.getString("vehicle_type");
                 %>
                             <div>
-                                <img src="<%= vehicleType.toLowerCase() %>.jpg" alt="<%= vehicleType %>"><br>
+                                <img src="<%= vehicleType %>.jpg" alt="<%= vehicleType %>"><br>
                                 <button class="book-button" name="vehicle" value="<%= vehicleType %>">Book <%= vehicleType %></button>
                             </div>
                 <%
@@ -71,6 +136,6 @@
         <!-- Content to be displayed when the user is not logged in -->
         <p>Please log in to access this page.</p>
     <% } %>
-
+</div>
 </body>
 </html>

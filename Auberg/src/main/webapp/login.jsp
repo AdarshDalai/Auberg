@@ -35,7 +35,7 @@
 
 <body>
 
-    <div class="login-container">
+    <div class="login-container" style="height:350px">
         <h2>Login</h2>
         <form action="${pageContext.request.contextPath}/login" method="post">
            <label for="username">Username:</label>
